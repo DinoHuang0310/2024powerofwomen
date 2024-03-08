@@ -1,0 +1,27 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* color schema */
+:root {
+  --color-primary: #928274;
+  --color-secondary: #555555;
+  --text-shadow: rgba(0, 0, 0, .8);
+}
+
+.scroll-container {
+  max-height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+html {
+  font-family: 'Noto Serif TC', 'Noto Sans TC', sans-serif, 'Microsoft JhengHei', arial;
+  font-size: 18px;
+  color: #555555;
+  letter-spacing: 0.1rem;
+}
