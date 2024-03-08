@@ -1,5 +1,7 @@
-# btnet vue3 components
+# 2024powerofwomen
  
+ [https://dinohuang0310.github.io/2024powerofwomen/](https://dinohuang0310.github.io/2024powerofwomen/)
+
  ### Follow the rules when you git
   1. feat: 新功能 (feature)
   2. fix: 修補bug
