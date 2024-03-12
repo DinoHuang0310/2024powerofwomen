@@ -58,6 +58,42 @@
           <BtYouTubePlayer :videoId="list.youtube" />
         </div>
       </ArticleWrapper>
+
+      <div class="my-[20vw] md:my-[6vw]">
+        <ContentWrapper
+          contentClass="bg-white rounded-lg sm:hover:opacity-75 opacity-100 duration-500 cursor-pointer"
+          :showShadow="true"
+          :theme="2"
+          @click="handleClick"
+        >
+          <figure class="sm:flex items-center">
+            <div class="relative w-3/4 sm:w-1/3 mx-auto sm:mr-8 py-2 sm:py-0">
+              <img
+                src="./assets/images/businesstoday_order.png"
+                alt="訂《今周刊》紙本13期 或 電子23期 1,399元 加贈周慕姿暢銷3書:《情緒勒索》+《過度努力》+《親密恐懼》(3書總價1,090元)"
+              >
+              <p class="absolute -bottom-1 right-0 text-xs font-bold">(3書總價1,090元)</p>
+            </div>
+            <figcaption class="sm:flex-1 mt-4 sm:mt-0">
+              <h3 class="text-lg xl:text-2xl font-black text-primary tracking-widest">
+                接納自己 找回你的人生價值<br>情緒 溝通 人際經營 游刃有餘
+              </h3>
+              <hr class="my-2 sm:my-3 border-gray-300">
+              <div class="text-sm font-black space-y-1">
+                <p>訂《今周刊》紙本13期 或 電子23期 1,399元</p>
+                <p>
+                  加贈 周慕姿 暢銷3書：
+                </p>
+                <p class="text-primary space-x-1 sm:space-x-2">
+                  <span class="inline-block border border-primary px-1.5 rounded-sm">情緒勒索</span>
+                  <span class="inline-block border border-primary px-1.5 rounded-sm">過度努力</span>
+                  <span class="inline-block border border-primary px-1.5 rounded-sm">親密恐懼</span>
+                </p>
+              </div>
+            </figcaption>
+          </figure>
+        </ContentWrapper>
+      </div>
       <hr>
     </div>
 
@@ -80,6 +116,7 @@ import Kvarea from './components/Kvarea.vue';
 import ArticleWrapper from './components/ArticleWrapper.vue'
 import BtPodcastPlayer from './components/BtPodcastPlayer/Player.vue'
 import BtYouTubePlayer from './components/BtYouTubePlayer/Player.vue'
+import ContentWrapper from './components/ContentWrapper.vue'
 import BtFooter from './components/BtFooter.vue';
 
 const { info, getInfo } = useInfoData()
@@ -87,6 +124,10 @@ const { isDev } = useClientConfig()
 const { isMobile } = useClientSize()
 
 const url = import.meta.env.VITE_URL
+
+const handleClick = () => {
+  window.open('https://www.businesstoday.com.tw/subscription/category/197907/detail/2546', '_blank');
+}
 
 onMounted(getInfo)
 
