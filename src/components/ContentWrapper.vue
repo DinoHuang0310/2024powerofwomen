@@ -15,7 +15,7 @@
     
     <div
       class="relative p-4 md:p-8 xl:px-14 xl:py-10"
-      :class="[contentClass, showShadow && 'shadow-lg xl:shadow-xl 2xl:shadow-2xl shadow-primary-dark/10']"
+      :class="[showShadow && 'shadow-lg xl:shadow-xl 2xl:shadow-2xl shadow-primary-dark/10', contentClass]"
     >
       <slot />
     </div>
