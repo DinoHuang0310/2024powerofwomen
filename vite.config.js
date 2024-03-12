@@ -17,6 +17,21 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     VITE_URL,
   } = loadEnv('all', process.cwd());
 
+  const injectGACode = () => {
+    const domains = {
+      'www.businesstoday.com.tw': 'G-E8H9YJZQJP',
+      'events.businesstoday.com.tw': 'G-E8QKRYXRLQ',
+      'esg.businesstoday.com.tw': 'G-SB7EH4Y2DY'
+    };
+    const target = Object.keys(domains).find(key => VITE_URL.includes(key));
+    if (target) {
+      return domains[target];
+    } else {
+      console.error('未知domain name', VITE_URL);
+      return '';
+    }
+  }
+
   return {
     base: isDev ? '/' : './',
     plugins: [
@@ -32,12 +47,12 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
           data: {
             injectScript: isDev ? 
               '' :
-              `<script async src="https://www.googletagmanager.com/gtag/js?id=G-E8H9YJZQJP"></script>
+              `<script async src="https://www.googletagmanager.com/gtag/js?id=${injectGACode()}"></script>
               <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'G-E8H9YJZQJP');
+                gtag('config', ${injectGACode()});
               </script>`,
             meta: {
               title: VITE_TITLE,
