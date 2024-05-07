@@ -52,7 +52,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', ${injectGACode()});
+                gtag('config', '${injectGACode()}');
               </script>`,
             meta: {
               title: VITE_TITLE,
