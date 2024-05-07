@@ -126,7 +126,7 @@ const { isMobile } = useClientSize()
 const url = import.meta.env.VITE_URL
 
 const handleClick = () => {
-  window.open('https://www.businesstoday.com.tw/subscription/category/197907/detail/2546', '_blank');
+  window.open('https://www.businesstoday.com.tw/subscription/category/197907/detail/2546/scheme/80496fa5e53f0dfe46b6baeaa72b69a6', '_blank');
 }
 
 onMounted(getInfo)
